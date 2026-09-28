@@ -1,27 +1,22 @@
 package ie.atu.oop.week1;
 
-public class Book
-{
+public class Book {
 
     private String title;
     private String author;
     private int pageCount;
     private BookStatus status;
 
-    public Book(String title, String author, int pageCount)
-    {
-        if (title == null || title.isBlank())
-        {
+    public Book(String title, String author, int pageCount) {
+        if (title == null || title.isBlank()) {
             throw new IllegalArgumentException("Title cannot be null or empty");
         }
 
-        if  (author == null || author.isBlank())
-        {
+        if (author == null || author.isBlank()) {
             throw new IllegalArgumentException("Author cannot be null or empty");
         }
 
-        if (pageCount < 1)
-        {
+        if (pageCount < 1) {
             throw new IllegalArgumentException("Page count cannot be less than 1");
         }
 
@@ -32,7 +27,7 @@ public class Book
 
     }
 
-    public enum BookStatus{
+    public enum BookStatus {
         AVAILABLE,
         ON_LOAN
     }
@@ -60,5 +55,14 @@ public class Book
                     "Book is already on loan");
         }
         status = BookStatus.ON_LOAN;
+    }
+
+    public void returnBook() {
+        if (status == BookStatus.AVAILABLE) {
+            throw new IllegalStateException("Book is already available");
+        }
+        if (status == BookStatus.ON_LOAN) {
+            status = BookStatus.AVAILABLE;
+        }
     }
 }
