@@ -1,38 +1,24 @@
 package ie.atu.oop.week1;
 
+import java.sql.SQLOutput;
+
 public class Main {
-    public static void main(String[] args)
-    {
-
-        Book firstbook = new Book();
-        firstbook.title = "Dune";
-        firstbook.author = "Frank Herbert";
-        firstbook.pageCount = 412;
-
-        // before loan
-        firstbook.displayDetails();
-        firstbook.borrowBook();
-        // after loan
-        firstbook.displayDetails();
-
-        Book secondbook = createBook("Clean Code",  "Dan Williams", 223);
-        Book thirdbook = createBook("Another Book Code",  "John Murphy", 133);
-        Book fourthbook = createBook("Student Life", "Mary Shelly", 442);
-
-        System.out.println("\n");
-        secondbook.displayDetails();
-        System.out.println("\n");
-        thirdbook.displayDetails();
-        System.out.println("\n");
-        fourthbook.displayDetails();
-    }
-
-    private static Book createBook(String title, String author, int pageCount)
-    {
-        Book book = new Book();
-        book.title = title;
-        book.author = author;
-        book.pageCount = pageCount;
-        return book;
+    public static void main(String[] args) {
+        Book first = new Book("Dune", "Frank Herbert", 412);
+        Book second = new Book("Clean Code", "Robert C. Martin", 464);
+        LibraryService service = new LibraryService();
+        System.out.println(first.getStatus());
+        service.loanBook(first, 7);
+        System.out.println(first.getStatus());
+        service.returnBook(first);
+        System.out.println(first.getStatus());
+        System.out.println(second.getStatus());
+        try {
+            service.loanBook(first, 15);
+        } catch (IllegalArgumentException ex) {
+            System.out.println(ex.getMessage());
+        }
+        System.out.println(first.getStatus());
     }
 }
+
