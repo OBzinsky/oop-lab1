@@ -1,22 +1,25 @@
 
-Observation:
-the seven day book call works because it is within the loan limit of 1-14 days
-the fifteen day book call does not work because it it outside the loan limit of 1-14 days which is illegal
+Lab 4
+5/10/26
+Oliver Brzezinski
 
-the first book is available before the fifteen day call because its shorter than 15
+Notes:
 
-Final notes:
-#1. JDK version 24
+#1. Lab 4 changes LibraryService from working wih a single supplied book to owning a list<book>
 
-#2. dont know
+#2. list<book> can tell the compiler the book by title alone
 
-#3. title, author, pagecount & status are not final, only static is.
+#3. final doesnt freeze the list, it still allows adding and removing books, it only prevents code assigning a different list to the field later.
 
-#4. 
+#4. the enhanced for loop variable represents the title of the book
 
-#5. getbook and status are in Book while return book loanbook are in libraryservice
+#5. findBookByTitle returns either the title of the book if its known or a null if its unknown
 
-#6. what?
+#6. why create another search loop if findBook already exists
 
-#7. no particular observations with the debugger & no AI assistance has been used
+#7. Main creates objects,calls LibraryService and prints results,
+    LibraryService owns the list, finds books and checks the loan durations
+    Book protects its own fields and decides whether borrowing or returning is allowed
+
+#8. maven build was successful & the final count is 2, no ai assistance was used.
 
