@@ -2,6 +2,7 @@ package ie.atu.oop.week1;
 import java.util.ArrayList;
 import java.util.List;
 
+// LibraryService owns the list<Book>
 
 public class LibraryService {
     private static final int MAX_LOAN_DAYS = 14;
@@ -62,5 +63,10 @@ public class LibraryService {
         }
         return false;
     }
+    public List<Book> getBooks()
+    {
+        return new ArrayList<>(books);
+    } // new array list gives the caller the same book references but prevents adding/removing elements
+
 
 }

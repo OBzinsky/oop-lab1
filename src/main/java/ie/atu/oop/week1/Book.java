@@ -1,5 +1,6 @@
 package ie.atu.oop.week1;
 
+// Book knows how one Book behaves
 
 public class Book {
 
