@@ -1,25 +1,24 @@
 
-Lab 4 -
-5/10/26 -
+Lab 5 -
+12/10/26 -
 Oliver Brzezinski
 
 Notes:
 
-#1. Lab 4 changes LibraryService from working wih a single supplied book to owning a list<book>
+1#. the Throw statement inside book creates and triggers an error condition while catch resolves it
 
-#2. list<book> can tell the compiler the book by title alone
+2#. Path.of gets the directory of inserted data (data and books.csv -> data/books.csv), one file method was file.getFileName()
 
-#3. final doesnt freeze the list, it still allows adding and removing books, it only prevents code assigning a different list to the field later.
+3#. Lab 5 adds exception handling and CSV persistence to the Library application
 
-#4. the enhanced for loop variable represents the title of the book
+4#. unchecked NumberFormatExceptions are error scenarios that go unchecked by the program and just display an error in the console, checked IOexceptions scenarios are accounted for in the program and checks can be made to correct them or display something specific if they happen.
 
-#5. findBookByTitle returns either the title of the book if its known or a null if its unknown
+5#. Path is the directory or way to a piece of data/location/etc, a file is that data/location/etc
 
-#6. why create another search loop if findBook already exists
+6#. the CSV columns are:
+    title,author,pageCount,status
+    Dune,Frank Herbert,412,ON_LOAN
+ Clean Code,Robert C. Martin,464,AVAILABLE
 
-#7. Main creates objects,calls LibraryService and prints results,
-    LibraryService owns the list, finds books and checks the loan durations
-    Book protects its own fields and decides whether borrowing or returning is allowed
-
-#8. maven build was successful & the final count is 2, no ai assistance was used.
+7#. no ai assistance was used during this lab.
 
